@@ -1,7 +1,9 @@
 plugins {
+
     id 'java'
     id 'org.springframework.boot' version '3.2.6'
     id 'io.spring.dependency-management' version '1.1.5'
+    id 'groovy'
 }
 
 group = 'com.example'
@@ -34,6 +36,45 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // spock
+//    testImplementation('org.spockframework:spock-core:2.1-groovy-3.0')
+//    testImplementation('org.spockframework:spock-spring:2.1-groovy-3.0')
+
+//    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+//    testImplementation 'org.spockframework:spock-spring:2.4-M1-groovy-4.0'
+
+    // Groovy 4.0 의존성
+    testImplementation 'org.apache.groovy:groovy:4.0.18'
+
+    // Spock 프레임워크 의존성 (Groovy 4.0 지원)
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+    testImplementation 'org.spockframework:spock-spring:2.4-M1-groovy-4.0'
+
+    // JUnit 플랫폼 엔진 (Spock이 JUnit 플랫폼에서 실행되도록 설정)
+    testImplementation 'org.junit.platform:junit-platform-launcher:1.8.2'
+
+//    testImplementation 'org.spockframework:spock-core:2.4-M4'
+//    testImplementation 'org.codehaus.groovy:groovy:3.0.9'
+
+//    // Groovy 의존성
+//    implementation 'org.codehaus.groovy:groovy:3.0.9'
+//
+//    // Spock 프레임워크 의존성
+//    testImplementation 'org.spockframework:spock-core:2.4-M4'
+//
+//    // JUnit 플랫폼 엔진 (Spock이 JUnit 플랫폼에서 실행되도록 설정)
+//    testImplementation 'org.junit.platform:junit-platform-launcher:1.8.2'
+
+    // 런타임에 클래스 기반 spock mock을 만들기 위해서 필요
+    testImplementation('net.bytebuddy:byte-buddy:1.12.10')
+
+    // test 컨테이너 spock 의존성 추가
+    testImplementation "org.testcontainers:spock:1.19.8"
+    // test 컨테이너 mariadb 의존성 추가
+    testImplementation "org.testcontainers:mariadb:1.19.8"
+
+
 }
 
 tasks.named('test') {

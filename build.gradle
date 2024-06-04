@@ -45,11 +45,12 @@ dependencies {
 //    testImplementation 'org.spockframework:spock-spring:2.4-M1-groovy-4.0'
 
     // Groovy 4.0 의존성
-    testImplementation 'org.apache.groovy:groovy:4.0.18'
+    testImplementation 'org.codehaus.groovy:groovy-all:4.0.3'
 
     // Spock 프레임워크 의존성 (Groovy 4.0 지원)
     testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
     testImplementation 'org.spockframework:spock-spring:2.4-M1-groovy-4.0'
+
 
     // JUnit 플랫폼 엔진 (Spock이 JUnit 플랫폼에서 실행되도록 설정)
     testImplementation 'org.junit.platform:junit-platform-launcher:1.8.2'

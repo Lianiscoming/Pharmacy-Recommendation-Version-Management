@@ -1,4 +1,6 @@
-import com.example.project3.api.service.KakaoUriBuilderService
+package com.example.project3.api.service
+
+
 import org.springframework.boot.test.context.SpringBootTest
 import spock.lang.Specification
 

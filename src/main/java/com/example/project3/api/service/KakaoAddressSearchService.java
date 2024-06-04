@@ -35,9 +35,10 @@ public class KakaoAddressSearchService {
         headers.set(HttpHeaders.AUTHORIZATION, "KakaoAK " + kakaoRestApikey);
         HttpEntity httpEntity = new HttpEntity<>(headers);
 
+        log.info("getBody::"+restTemplate.exchange(uri, HttpMethod.GET, httpEntity, KakaoApiResponseDto.class).getBody().getDocumentDtoList());
+
         // kakao api 호출
         return restTemplate.exchange(uri, HttpMethod.GET, httpEntity, KakaoApiResponseDto.class).getBody();
-
 
     }
 }
